@@ -84,7 +84,7 @@ We trained the model on all but the **last 2 episodes per show**, then evaluated
 
 We plotted predictions with uncertainty and true ratings:
 
-![Predicted vs Actual](Assets/Plots/bnn_softlabel_predictions.png)
+![Predicted vs Actual](Assets/Plots/bnn_predicted_vs_actual_all.png)
 
 - Vertical bars = BNN uncertainty  
 - Blue dots = predicted scores  
