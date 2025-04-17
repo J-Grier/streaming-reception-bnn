@@ -1,13 +1,33 @@
 # 🎬 Predicting TV Episode Reception with Bayesian Neural Networks
 
-## 📌 Project Overview
+## Overview
+This project applies Bayesian Neural Networks (BNNs) combined with topic modeling and sentiment analysis to predict how audiences will receive streaming TV series. By analyzing fan discussions on Reddit, the model forecasts episode-level audience ratings with probabilistic confidence, providing actionable insights for content creators and marketers.
 
-This project explores how streaming audiences engage with television content by using Reddit discussions to predict **IMDb episode ratings**. We focus on modeling **viewer reception** using a **Bayesian Neural Network (BNN)** that incorporates both:
+## Objectives
+- **Primary Goal**: Predict episode-level audience reception with quantified uncertainty.
+- **Actionable Insights**: Enable strategic content and marketing decisions based on predicted audience reactions.
 
-- 💬 Latent discussion topics (via LDA)
-- 📉 Text sentiment scores (via VADER)
+## Approach
+The analysis employs a multi-layered Bayesian approach:
+- **Bayesian Neural Network (BNN)**: Uses Pyro to predict IMDb episode ratings, modeling uncertainty explicitly.
+- **Latent Dirichlet Allocation (LDA)**: Extracts topics from Reddit discussions, giving context to viewer sentiment.
+- **VADER Sentiment Analysis**: Assesses emotional tone, capturing sentiment nuances from audience comments.
 
-The model is trained across 10+ shows, including *Severance*, *The Bear*, *Velma*, *One Piece*, and *Ahsoka*.
+The combination of these tools provides not only predictions about audience reception but also detailed insights into why certain reactions occur.
+
+## Key Findings
+- **Reliable Predictions with Uncertainty**: BNN effectively predicted episode ratings for diverse shows like *Severance*, *The Bear*, and *Ahsoka*, accurately reflecting audience sentiment.
+- **Detection of Cultural Outliers**: Clearly identified shows like *Velma*, where predicted scores significantly differed from actual IMDb ratings due to unique audience dynamics like review bombing or meme-driven backlash.
+- **Effective Generalization**: Successfully predicted reception trends within shows, even for episodes not explicitly shown to the model during training.
+
+## Impact and Applications
+- **Strategic Content Development**: Allows producers to proactively adjust content and marketing strategies based on predictive insights.
+- **Enhanced Audience Targeting**: Facilitates targeted promotional campaigns by identifying key sentiment drivers.
+- **Risk Mitigation**: Early identification of potentially controversial or poorly received content.
+
+## Limitations and Future Directions
+- **Platform-Specific Data**: The current model primarily analyzes Reddit data, potentially limiting broader applicability.
+- **Future Enhancements**: Incorporate additional platforms (e.g., Twitter, YouTube) and explore further hybrid modeling techniques.
 
 ---
 
@@ -96,9 +116,7 @@ We plotted predictions with uncertainty and true ratings:
 
 This project demonstrates how Bayesian modeling can surface nuance in audience reception that traditional classifiers might miss.
 
-I designed and implemented a full probabilistic modeling pipeline using Reddit discourse to predict episode-level ratings across diverse genres. By combining topic modeling and sentiment analysis, the model captured both **what fans were discussing** and **how they felt**.
-
-The Bayesian Neural Network allowed me to quantify uncertainty, identify outlier behavior (*Velma*), and generalize across shows with sparse discourse (*One Piece* and *Fallout*). This project gave me hands-on experience in:
+The Bayesian Neural Network quantified uncertainty, identified outlier behavior (Velma), and generalized across shows with sparse discourse (One Piece and Fallout). This project provided hands-on experience in:
 
 - Probabilistic programming with Pyro  
 - Feature engineering from unstructured text  
